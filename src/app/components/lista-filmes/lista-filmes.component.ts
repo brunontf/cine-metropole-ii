@@ -15,7 +15,7 @@ export class ListaFilmesComponent {
   
   removerFilme(id:string){
     this.listaFilmes  = this.listaFilmes.filter(item => { return item.id !== id});
-    this.listaFilmes .forEach((item,i) => item.id = i.toString())
+    this.listaFilmes .forEach((item,i) => item.id = (i+1).toString())
     console.log(this.listaFilmes);
   }
 }
