@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Adicionar Filme</h2>
+    <hr/>
+    <form #form="ngForm" (ngSubmit)="addFilme(form)">
+      <div class="form-group">
+        <label for="titulo">Título: </label>
+        <input required type="text" id="titulo" name="titulo" class="form-control" #titulo="ngModel" ngModel />
+      </div>
+      <div [hidden]="titulo.valid || titulo.pristine" class="alert alert-danger">
+        <p *ngIf="titulo.errors?.['required']" >Error: titulo is Required</p>
+      </div>
+      <div class="form-group">
+        <label for="sinopse">Sinopse: </label>
+        <textarea required id="sinopse" rows="5"
+                  name="sinopse"
+                  class="form-control"
+                  #sinopse="ngModel" ngModel>
+        </textarea>
+      </div>
+      <div [hidden]="sinopse.valid || sinopse.pristine" class="alert alert-danger">
+        <p *ngIf="sinopse.errors?.['required']" >Error: Sinopse is Required</p>
+      </div>
+      <div class="form-group">
+        <label for="imagem">Imagem: </label>
+        <input type="text" id="imagem" name="imagem" class="form-control" #imagem="ngModel" ngModel />
+      </div>
+      <div [hidden]="imagem.valid || imagem.pristine" class="alert alert-danger">
+        <p *ngIf="imagem.errors?.['required']" >Error: Imagem is Required</p>
+      </div>
+      <div>
+        <a href="#" routerLink="/" routerLinkActive="active" class="btn btn-secondary float-left">Cancelar</a>
+        <button type="submit" class="btn btn-primary float-right">Salvar</button>
+      </div>
+    </form>
+  </div>
+
