@@ -47,7 +47,8 @@
                 <div class="form-group">
                   <textarea #comentario class="form-control" rows="3">{{filme.comentario}}</textarea>
                 </div>
-                <button (click)="comentarFilme(filme.id, comentario)" class="btn btn-sm btn-primary" type="button">Comentar</button>
+                <button *ngIf="filme.favorito != 'blank'" (click)="comentarFilme(filme.id, comentario)" class="btn btn-sm btn-primary" type="button">Comentar</button>
+                <button *ngIf="filme.favorito == 'blank'" disabled (click)="comentarFilme(filme.id, comentario)" class="btn btn-sm btn-primary" type="button">Comentar</button>
               </form>
             </td>
             <td>
