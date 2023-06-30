@@ -26,13 +26,20 @@
               <a *ngIf="filme.favorito == 'true'"><i class="bi bi-star-fill"></i></a>
               <a *ngIf="filme.favorito == 'false'"><i class="bi bi-star"></i></a>
             </td>
+
             <td>
-              <a href="@{/filme/like/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-up-fill"></i></a>
+              <a  #gost (click)="liker(gostei,naoGostei,gost)">
+                <!-- <i #gostei class="bi bi-hand-thumbs-up-fill"></i> -->
+                <i #gostei class="bi bi-hand-thumbs-up-fill"></i>
+              </a>
             </td>
             <td>
-              <a href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
+              <a (click)="unliker(naoGostei,gostei)">
+                <i #naoGostei class="bi bi-hand-thumbs-down"></i>
+              </a>
             </td>
-            <td>            
+            <td>
+
               <form>
                 <div class="form-group">
                   <textarea #comentario class="form-control" rows="3">{{filme.comentario}}</textarea>
