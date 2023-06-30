@@ -7,65 +7,42 @@
           <th scope="col">Id</th>
           <th scope="col" class="col-sm-2">Imagem</th>
           <th scope="col">Título</th>
-          <!-- <th scope="col">Gênero</th> -->
-          <!-- <th scope="col">Duração</th> -->
-          <!-- <th scope="col">IMDB</th> -->
-          <th scope="col">Favoritar</th>
+          <th scope="col">Sinopse</th>
           <th scope="col">Like</th>
           <th scope="col">Dislike</th>
+          <th scope="col">Comentário</th>
           <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
-        <div *ngFor="let filme of listaFilmes">
-          <tr>
+          <tr *ngFor="let filme of listaFilmes">
             <td>{{filme.id}}</td>
             <td><img [src]="filme.imagem" [alt]="filme.titulo" [title]="filme.titulo" class="img-fluid"/></td>
             <td>{{filme.titulo}}</td>
-            <!-- <td th:text="${filme.genero}"></td> -->
-            <!-- <td th:text="${filme.duracao}"></td> -->
-            <!-- <td th:text="${filme.imdb}"></td> -->
+            <td>{{filme.sinopse}}</td>
             <td>
-              <a *ngIf="filme.favorito == 'true'"><i class="bi bi-star-fill"></i></a>
-              <a *ngIf="filme.favorito == 'false'"><i class="bi bi-star"></i></a>
+              <a href="@{/filme/like/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-up-fill"></i></a>
             </td>
             <td>
-              <a *ngIf="filme.favorito =='true'" #gost (click)="liker(gostei,naoGostei,gost)">
-                <i #gostei class="bi bi-hand-thumbs-up-fill"></i>
-              </a>
-              <a *ngIf="filme.favorito =='false'" #gost (click)="liker(gostei,naoGostei,gost)">
-                <i #gostei class="bi bi-hand-thumbs-up"></i>
-              </a>
+              <a href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
             </td>
             <td>
-              <a (click)="unliker(naoGostei,gostei)"><i #naoGostei class="bi bi-hand-thumbs-down"></i></a>
+              <form>
+                <div class="form-group">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button class="btn btn-sm btn-primary" type="submit">Comentar</button>
+              </form>
             </td>
-            <!-- <td>
-              <a th:href="@{/filme/editar/{id}(id=${filme.id})}">Editar</a>
-            </td> -->
             <td>
-              <a
-                onclick="return confirm('Tem certeza que deseja excluir este filme?')"
-                (click)="removerFilme(filme.id)"
-                >Excluir</a>
+              <a (click)="removerFilme(filme.id)">Excluir</a>
             </td>
           </tr>
-          <tr>
-            <td
-              colspan="12"
-              style="border-top: 0 !important"
-            >{{filme.sinopse}}</td>
-          </tr>
-        </div>
       </tbody>
     </table>
     <div>
-      <a th:href="@{/filme/favoritos}" class="btn btn-warning float-left"
-        >Favoritos</a
-      >
-      <a th:href="@{/filme/novo}" class="btn btn-primary float-right"
-        >Adicionar filme</a
-      >
+      <a href="@{/filme/favoritos}" class="btn btn-warning float-left">Favoritos</a>
+      <a href="@{/filme/novo}" class="btn btn-primary float-right">Adicionar filme</a>
     </div>
   </div>
   <div class="clearfix"></div>
