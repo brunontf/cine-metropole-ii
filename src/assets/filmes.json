@@ -8,7 +8,8 @@
       "imdb": "7.9",
       "imagem": "https://media.fstatic.com/BemTmRIVFm_vjd6K1Ly3gK22p2k=/322x478/smart/filters:format(webp)/media/movies/covers/2011/06/71fc1d0bb2bc1483e66941bb2f17d830.jpg",
       "like": "10",
-      "favorito": "anull"
+      "favorito": "blank",
+      "comentario":"Hello Pandora!"
     },
     {
       "id": "2",
@@ -19,7 +20,8 @@
       "imdb": "6.4",
       "imagem": "https://cinema10.com.br/upload/filmes/filmes_16557_megan-poster.jpg",
       "like": "8",
-      "favorito": "false"
+      "favorito": "false",
+      "comentario": ""
     },
     {
       "id": "3",
@@ -30,7 +32,8 @@
       "imdb": "7.8",
       "imagem": "https://www.kinoplex.com.br/filmes/images/cartaz/262x388/a-baleia.jpg",
       "like": "9",
-      "favorito": "anull"
+      "favorito": "blank",
+      "comentario": ""
     },
     {
       "id": "4",
@@ -41,7 +44,8 @@
       "imdb": "5.7",
       "imagem": "https://www.kinoplex.com.br/filmes/images/cartaz/262x388/homem-formiga-e-vespa-quantumania.jpg",
       "like": "6",
-      "favorito": "false"
+      "favorito": "false",
+      "comentario": ""
     },
     {
       "id": "5",
@@ -52,7 +56,8 @@
       "imdb": "8",
       "imagem": "https://www.kinoplex.com.br/filmes/images/cartaz/262x388/tudo-em-todo-o-lugar-ao-mesmo-tempo.jpg",
       "like": "12",
-      "favorito": "true"
+      "favorito": "true",
+      "comentario": ""
     },
     {
       "id": "6",
@@ -63,6 +68,7 @@
       "imdb": "7.3",
       "imagem": "https://www.kinoplex.com.br/filmes/images/cartaz/262x388/creed-iii.jpg",
       "like": "10",
-      "favorito": "true"
+      "favorito": "true",
+      "comentario": ""
     }
   ]

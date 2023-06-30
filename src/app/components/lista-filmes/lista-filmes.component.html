@@ -29,19 +29,20 @@
               <a href="@{/filme/like/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-up-fill"></i></a>
             </td>
             <td>
-              <a href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
+              <form>
+                <div class="form-group">
+                  <textarea #comentario class="form-control" rows="3">{{filme.comentario}}</textarea>
+                </div>
+                <button (click)="comentarFilme(filme.id, comentario)" class="btn btn-sm btn-primary" type="button">Comentar</button>
+              </form>
             </td>
             <td>
-              <a (click)="removerFilme(filme.id)">Excluir</a>
+              <button class="btn btn-danger" (click)="removerFilme(filme.id)">Excluir</button>
             </td>
           </tr>
 
       </tbody>
     </table>
-    <div>
-      <a href="@{/filme/favoritos}" class="btn btn-warning float-left">Favoritos</a>
-      <a href="@{/filme/novo}" class="btn btn-primary float-right">Adicionar filme</a>
-    </div>
   </div>
   <div class="clearfix"></div>
 </div>

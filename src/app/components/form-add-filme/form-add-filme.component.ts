@@ -23,7 +23,8 @@ export class FormAddFilmeComponent {
       sinopse : form.value.sinopse,
       imagem : form.value.imagem,
       id: idNumber.toString(),
-      favorito: "null"
+      favorito: "blank",
+      comentario: ""
     }
     this.listaFilmes.push(filme);
     console.log(form.value)
