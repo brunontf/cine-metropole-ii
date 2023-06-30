@@ -6,7 +6,8 @@ interface FILME{
   titulo:string,
   imagem:string,
   sinopse:string,
-  favorito:string;
+  favorito:string,
+  comentario:string;
 }
 
 @Injectable({

@@ -8,6 +8,7 @@
           <th scope="col" class="col-sm-2">Imagem</th>
           <th scope="col">Título</th>
           <th scope="col">Sinopse</th>
+          <th scope="col">Favoritar</th>
           <th scope="col">Like</th>
           <th scope="col">Dislike</th>
           <th scope="col">Comentário</th>
@@ -15,35 +16,36 @@
         </tr>
       </thead>
       <tbody>
+        
           <tr *ngFor="let filme of listaFilmes">
             <td>{{filme.id}}</td>
             <td><img [src]="filme.imagem" [alt]="filme.titulo" [title]="filme.titulo" class="img-fluid"/></td>
             <td>{{filme.titulo}}</td>
             <td>{{filme.sinopse}}</td>
             <td>
+              <a *ngIf="filme.favorito == 'true'"><i class="bi bi-star-fill"></i></a>
+              <a *ngIf="filme.favorito == 'false'"><i class="bi bi-star"></i></a>
+            </td>
+            <td>
               <a href="@{/filme/like/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-up-fill"></i></a>
             </td>
             <td>
               <a href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
             </td>
-            <td>
+            <td>            
               <form>
                 <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
+                  <textarea #comentario class="form-control" rows="3">{{filme.comentario}}</textarea>
                 </div>
-                <button class="btn btn-sm btn-primary" type="submit">Comentar</button>
+                <button (click)="comentarFilme(filme.id, comentario)" class="btn btn-sm btn-primary" type="button">Comentar</button>
               </form>
             </td>
             <td>
-              <a (click)="removerFilme(filme.id)">Excluir</a>
+              <button class="btn btn-danger" (click)="removerFilme(filme.id)">Excluir</button>
             </td>
           </tr>
       </tbody>
     </table>
-    <div>
-      <a href="@{/filme/favoritos}" class="btn btn-warning float-left">Favoritos</a>
-      <a href="@{/filme/novo}" class="btn btn-primary float-right">Adicionar filme</a>
-    </div>
   </div>
   <div class="clearfix"></div>
 </div>
