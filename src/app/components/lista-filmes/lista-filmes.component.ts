@@ -60,14 +60,14 @@ export class ListaFilmesComponent implements OnInit {
 
 
   compare(a: FILME, b: FILME) {
-  if (a.favorito < b.favorito) {
-    return -1;
+    if (a.favorito < b.favorito) {
+      return -1;
+    }
+      if (a.favorito > b.favorito) {
+      return 1;
+    }
+    return 0;  
   }
-    if (a.favorito > b.favorito) {
-    return 1;
-  }
-  return 0;  
-}
 
 
   ordernarFilmes(){
