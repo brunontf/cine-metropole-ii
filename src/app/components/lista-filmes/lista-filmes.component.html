@@ -30,10 +30,15 @@
               <a *ngIf="filme.favorito == 'false'"><i class="bi bi-star"></i></a>
             </td>
             <td>
-              <a th:href="@{/filme/like/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-up-fill"></i></a>
+              <a *ngIf="filme.favorito =='true'" #gost (click)="liker(gostei,naoGostei,gost)">
+                <i #gostei class="bi bi-hand-thumbs-up-fill"></i>
+              </a>
+              <a *ngIf="filme.favorito =='false'" #gost (click)="liker(gostei,naoGostei,gost)">
+                <i #gostei class="bi bi-hand-thumbs-up"></i>
+              </a>
             </td>
             <td>
-              <a th:href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
+              <a (click)="unliker(naoGostei,gostei)"><i #naoGostei class="bi bi-hand-thumbs-down"></i></a>
             </td>
             <!-- <td>
               <a th:href="@{/filme/editar/{id}(id=${filme.id})}">Editar</a>
