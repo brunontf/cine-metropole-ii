@@ -8,7 +8,7 @@
       "imdb": "7.9",
       "imagem": "https://media.fstatic.com/BemTmRIVFm_vjd6K1Ly3gK22p2k=/322x478/smart/filters:format(webp)/media/movies/covers/2011/06/71fc1d0bb2bc1483e66941bb2f17d830.jpg",
       "like": "10",
-      "favorito": "false"
+      "favorito": "anull"
     },
     {
       "id": "2",
@@ -30,7 +30,7 @@
       "imdb": "7.8",
       "imagem": "https://www.kinoplex.com.br/filmes/images/cartaz/262x388/a-baleia.jpg",
       "like": "9",
-      "favorito": "true"
+      "favorito": "anull"
     },
     {
       "id": "4",

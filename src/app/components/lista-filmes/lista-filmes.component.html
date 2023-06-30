@@ -32,7 +32,7 @@
               <a href="@{/filme/dislike/{id}(id=${filme.id})}"><i class="bi bi-hand-thumbs-down-fill"></i></a>
             </td>
             <td>
-              <a onclick="return confirm('Tem certeza que deseja excluir este filme?')" (click)="removerFilme(filme.id)">Excluir</a>
+              <a (click)="removerFilme(filme.id)">Excluir</a>
             </td>
           </tr>
 
