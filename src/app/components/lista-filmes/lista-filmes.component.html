@@ -8,7 +8,7 @@
           <th scope="col" class="col-sm-2">Imagem</th>
           <th scope="col">Título</th>
           <th scope="col">Sinopse</th>
-          <th scope="col">Favoritar</th>
+          <!-- <th scope="col">Favoritar</th> -->
           <th scope="col">Like</th>
           <th scope="col">Dislike</th>
           <th scope="col">Comentário</th>
@@ -22,20 +22,23 @@
             <td><img [src]="filme.imagem" [alt]="filme.titulo" [title]="filme.titulo" class="img-fluid"/></td>
             <td>{{filme.titulo}}</td>
             <td>{{filme.sinopse}}</td>
-            <td>
+            <!-- <td>
               <a *ngIf="filme.favorito == 'true'"><i class="bi bi-star-fill"></i></a>
               <a *ngIf="filme.favorito == 'false'"><i class="bi bi-star"></i></a>
-            </td>
+            </td> -->
 
             <td>
-              <a  #gost (click)="liker(gostei,naoGostei,gost)">
-                <!-- <i #gostei class="bi bi-hand-thumbs-up-fill"></i> -->
-                <i #gostei class="bi bi-hand-thumbs-up-fill"></i>
+              <a (click)="liker(filme)">
+                <i *ngIf="filme.favorito == 'true'" class="bi bi-hand-thumbs-up-fill"></i>
+                <i *ngIf="filme.favorito == 'false'" class="bi bi-hand-thumbs-up"></i>
+                <i *ngIf="filme.favorito == 'blank'" class="bi bi-hand-thumbs-up"></i>
               </a>
             </td>
             <td>
-              <a (click)="unliker(naoGostei,gostei)">
-                <i #naoGostei class="bi bi-hand-thumbs-down"></i>
+              <a (click)="unliker(filme)">
+                <i *ngIf="filme.favorito == 'true'" class="bi bi-hand-thumbs-down"></i>
+                <i *ngIf="filme.favorito == 'false'" class="bi bi-hand-thumbs-down-fill"></i>
+                <i *ngIf="filme.favorito == 'blank'" class="bi bi-hand-thumbs-down"></i>
               </a>
             </td>
             <td>

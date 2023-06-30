@@ -26,32 +26,26 @@ export class ListaFilmesComponent implements OnInit {
     this.ordernarFilmes();
   }
 
-  
 
   listaFilmes = this.filmeData.listaFilmes;
-  // like : string = "bi bi-hand-thumbs-up";
-  // unlike : string = "bi bi-hand-thumbs-down";
 
-  liker(gostei:HTMLElement,naoGostei:HTMLElement, gost:HTMLAnchorElement){
-    if(gostei.className == "bi bi-hand-thumbs-up"){
-      gostei.className = "bi bi-hand-thumbs-up-fill";
-    } else {
-      gostei.className = "bi bi-hand-thumbs-up";
+  liker(filme:FILME){
+    if(filme.favorito == "false"){
+      filme.favorito = "true";
+    } else if(filme.favorito == "blank") {
+      filme.favorito = "true";
+    } else if(filme.favorito == "true") {
+      filme.favorito = "blank";
     }
-    if(naoGostei.className == "bi bi-hand-thumbs-down-fill"){
-      naoGostei.className = "bi bi-hand-thumbs-down";
-    }
-    // console.log(gost.);
   }
 
-  unliker(naoGostei:HTMLElement,gostei:HTMLElement){
-    if(naoGostei.className == "bi bi-hand-thumbs-down"){
-      naoGostei.className = "bi bi-hand-thumbs-down-fill";
-    } else {
-      naoGostei.className = "bi bi-hand-thumbs-down";
-    }
-    if(gostei.className == "bi bi-hand-thumbs-up-fill"){
-      gostei.className = "bi bi-hand-thumbs-up";
+  unliker(filme:FILME){
+    if(filme.favorito == "true"){
+      filme.favorito = "false";
+    } else if(filme.favorito == "blank") {
+      filme.favorito = "false";
+    } else if(filme.favorito == "false") {
+      filme.favorito = "blank";
     }
   }
 
