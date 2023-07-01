@@ -14,7 +14,9 @@ export class FormAddFilmeComponent {
   listaFilmes = this.filmeData.listaFilmes;
 
   addFilme(form:NgForm){
-    let idNumber = this.listaFilmes.length + 1;
+    let ultimoElemento = this.listaFilmes?.pop()
+    let idNumber = Number.parseInt(ultimoElemento.id) +1
+
     let filme = {
       titulo : form.value.titulo,
       sinopse : form.value.sinopse,
